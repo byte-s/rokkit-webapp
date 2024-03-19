@@ -6,10 +6,12 @@ import { CoverHeader } from "./CoverHeader/CoverHeader";
 import { CoverFooter } from "./CoverFooter/CoverFooter";
 import cn from "classnames";
 import React, { FunctionComponent } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const Layout = ({children}:LayoutProps): JSX.Element => {
     return (
         <div className={styles.wrapper}>
+            <SpeedInsights/>
             <Header className={styles.header}/>
             <div className={styles.body}>
                 {children}
@@ -22,6 +24,7 @@ const Layout = ({children}:LayoutProps): JSX.Element => {
 const CoverLayout = ({children}:LayoutProps): JSX.Element => {
     return (
         <div className={styles.coverWrapper}>
+            <SpeedInsights/>
             <video src="../static/vid/bg.mp4" autoPlay loop muted></video>
             <CoverHeader className={styles.header}/>
             <div className={styles.coverBody}>

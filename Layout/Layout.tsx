@@ -25,7 +25,7 @@ const CoverLayout = ({children}:LayoutProps): JSX.Element => {
     return (
         <div className={styles.coverWrapper}>
             <SpeedInsights/>
-            <video src="../static/vid/bg.mp4" autoPlay playsInline loop muted></video>
+            <video src="../static/vid/bg.webm" autoPlay playsInline loop muted></video>
             <CoverHeader className={styles.header}/>
             <div className={styles.coverBody}>
                 {children}

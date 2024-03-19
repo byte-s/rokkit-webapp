@@ -83,7 +83,7 @@ function About(): JSX.Element {
         <Htag tag='h2'>Как мы работаем</Htag>
         <div className={styles.actionsWrapper}>
           <div className={styles.actionsItem}>
-            <img src="../static/img/action-1.png" alt="" />
+            <img src="../static/img/action-1.webp" alt="Проектирование и модель" />
             <h3>
               01 — Аналитика и аудит
             </h3>
@@ -92,7 +92,7 @@ function About(): JSX.Element {
             </p>
           </div>
           <div className={styles.actionsItem}>
-            <img src="../static/img/action-2.png" alt="" />
+            <img src="../static/img/action-2.webp" alt="Проектирование и модель" />
             <h3>
               02 — Проектирование и модель
             </h3>
@@ -101,7 +101,7 @@ function About(): JSX.Element {
             </p>
           </div>
           <div className={styles.actionsItem}>
-            <img src="../static/img/action-3.png" alt="" />
+            <img src="../static/img/action-3.webp" alt="Разработка и внедрение" />
             <h3>
               03 — Разработка и внедрение
             </h3>
@@ -110,7 +110,7 @@ function About(): JSX.Element {
             </p>
           </div>
           <div className={styles.actionsItem}>
-            <img src="../static/img/action-4.png" alt="" />
+            <img src="../static/img/action-4.webp" alt="Развертывание и оптимизация" />
             <h3>
               04 — Развертывание и оптимизация
             </h3>

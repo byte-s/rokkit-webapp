@@ -31,7 +31,6 @@
     z-index: 1;
     overflow: hidden;
     pointer-events: none;
-    padding: 10px;
 }
 
 .coverWrapper video::-webkit-media-controls {

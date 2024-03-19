@@ -61,11 +61,11 @@
 }
 .header{
     grid-area: header;
-    padding: 0 100px;
+    padding: 35px 100px;
 }
 .footer{
     grid-area: footer;
-    padding: 0 100px;
+    padding: 35px 100px;
 }
 .body{
     scroll-behavior: smooth;

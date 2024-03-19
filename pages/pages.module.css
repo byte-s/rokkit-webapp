@@ -148,6 +148,9 @@
 }
 .check{
     margin-bottom: 7px;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
 }
 .check input{
     margin: 0;

@@ -31,3 +31,8 @@
         font-size: 20px;
     }
 }
+@media (max-width: 390px){
+    .white{
+        font-size: 18px;
+    }
+}

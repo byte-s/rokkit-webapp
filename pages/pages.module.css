@@ -32,6 +32,9 @@
     flex-direction: column;
     
 }
+.contacts h3{
+    margin-top: 0;
+}
 .contacts a{
     font-size: 20px;
     margin-bottom: 20px;
@@ -60,6 +63,7 @@
 .valuesCard p{
     font-size: 15px;
     font-weight: 400;
+    color: #5A5A5A;
 }
 .subtitle{
     font-weight: 500;

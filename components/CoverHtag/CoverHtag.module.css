@@ -1,25 +1,25 @@
 .h1{
-    font-size: 64px;
+    font-size: 48px;
     font-weight: 800;
     color: var(--white);
 }
-@media (max-width: 1025px){
+@media (max-width: 910px){
     .h1{
-        font-size: 48px;
+        font-size: 32px;
     }
 }
 @media (max-width: 765px){
     .h1{
-        font-size: 36px;
+        font-size: 28px;
     }
 }
 @media (max-width: 390px){
     .h1{
-        font-size: 30px;
+        font-size: 24px;
     }
 }
 @media (max-width: 280px){
     .h1{
-        font-size: 28px;
+        font-size: 22px;
     }
 }

@@ -8,6 +8,7 @@ import { CoverHtag } from '../components/CoverHtag/CoverHtag';
 import { CallBackBlock } from '../components/CallBackBlock/CallBackBlock';
 import cn from 'classnames'
 import styles from './pages.module.css'
+import React from 'react';
 
 
 
@@ -20,7 +21,7 @@ function Contacts(): JSX.Element {
       <div className={cn(styles.heading, styles.headBlock)}>
         <Htag tag='h1'>Контакты</Htag>
         <p>
-          We support Web 3.0 teams and open-source projects through funding, advocacy, research and collaborations.
+          Расскажите нам о своем проекте - мы свяжемся с вами и введем в курс дела
         </p>
       </div>
       <div className={styles.contactsWrapper}>
@@ -105,6 +106,10 @@ function Contacts(): JSX.Element {
               <h2>Наши контакты</h2>
               <p>Российская Федерация, Омская область, <br /> г. Омск, ул. Фурманова, 7В</p>
               <p>+79994589255</p>
+              <h2>Реквизиты</h2>
+              <p>ООО "РОККИТ"</p>
+              <p>5503274800 / 550301001</p>
+              <p>1245500003650</p>
             </div>
         </div>
     </>

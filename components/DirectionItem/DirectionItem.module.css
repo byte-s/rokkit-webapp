@@ -10,12 +10,17 @@
     margin: 0;
     font-size: 15px;
     color: #888686;
+    margin-bottom: 5px;
 }
 .item h3{
     margin-top: 0;
     margin-bottom: 10px;
     font-size: 16px;
     font-weight: 500;
+}
+.item span{
+    font-size: 15px;
+    color: var(--white);
 }
 @media (max-width: 1075px){
     .item{

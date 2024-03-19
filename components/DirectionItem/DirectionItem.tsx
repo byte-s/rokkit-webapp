@@ -1,5 +1,6 @@
 import { DirectionItemProps } from "./DirectionItem.props";
 import styles from "./DirectionItem.module.css"
+import React from "react";
 
 export const DirectionItem = ({type, children}:DirectionItemProps): JSX.Element => {
     switch (type) {
@@ -18,6 +19,7 @@ export const DirectionItem = ({type, children}:DirectionItemProps): JSX.Element 
                                 Сайты и веб-приложения
                             </h3>
                             <p>{children}</p>
+                            <span>от 90 000 руб.</span>
                         </div>;
         case "2": return <div className={styles.item}>
                             <h3 className={styles.heading}>
@@ -39,6 +41,7 @@ export const DirectionItem = ({type, children}:DirectionItemProps): JSX.Element 
                                 Внедрение CRM
                             </h3>
                             <p>{children}</p>
+                            <span>от 60 000 руб.</span>
                         </div>;
         case "3": return <div className={styles.item}>
                             <h3 className={styles.heading}>
@@ -60,6 +63,7 @@ export const DirectionItem = ({type, children}:DirectionItemProps): JSX.Element 
                                 Дизайн интерфейсов
                             </h3>
                             <p>{children}</p>
+                            <span>от 40 000 руб.</span>
                         </div>;
         default: return <></>;
     }

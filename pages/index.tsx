@@ -1,10 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { withCoverLayout, withLayout } from '../Layout/Layout'
-import { Htag } from '../components/Htag/Htag';
-import { Button } from '../components/Button/Button';
+import { withCoverLayout } from '../Layout/Layout'
 import { CallButton } from '../components/CallButton/CallButton';
 import { CoverHtag } from '../components/CoverHtag/CoverHtag';
+import React from 'react';
 
 function Home(): JSX.Element {
   return (

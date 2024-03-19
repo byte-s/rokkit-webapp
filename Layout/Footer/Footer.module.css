@@ -18,6 +18,9 @@
 .mail{
     transition: all 0.3s;
 }
+.copyright{
+    font-weight: 400;
+}
 .mail:hover{
     color: var(--grey);
 }
@@ -33,7 +36,10 @@
     .footer{
         grid-template-columns: 1fr auto;
         gap: 20px;
-        padding: 35px;
+        padding: 35px!important;
+    }
+    .copyright{
+        font-size: 14px;
     }
     .mail{
         display: none;

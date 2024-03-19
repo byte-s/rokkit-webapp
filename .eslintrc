@@ -14,15 +14,16 @@
             {
                 "allowSingleExtends": true
             }
-        ]
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
     },
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended"
     ],
-    "quotes": [
-        "error",
-        "single"
-    ],
+    
 }

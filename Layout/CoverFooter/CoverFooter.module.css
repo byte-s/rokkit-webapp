@@ -38,7 +38,7 @@
     .footer{
         grid-template-columns: 1fr auto;
         gap: 20px;
-        padding: 35px;
+        padding: 35px!important;
     }
     .mail{
         display: none;

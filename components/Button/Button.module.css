@@ -1,0 +1,29 @@
+.button{
+    background-color: transparent;
+    display: inline-block;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 10px 25px;
+    font-size: 16px;
+    text-align: center;
+    transition: all 0.3s;
+    border-radius: 7px;
+}
+.white{
+    border: 1px solid var(--white);
+    color: var(--black);
+    background-color: var(--white);
+}
+.black{
+    border: 1px solid var(--black);
+    color: var(--white);
+    background-color: var(--black);
+}
+.white:hover{
+    color: var(--grey);
+    border: 1px solid var(--grey);
+}
+.black:hover{
+    color: var(--grey);
+    border: 1px solid var(--grey);
+}

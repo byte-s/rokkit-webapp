@@ -1,0 +1,53 @@
+import { LayoutProps } from "./Layout.props";
+import styles from "./Layout.module.css"
+import { Header } from "./Header/Header";
+import { Footer } from "./Footer/Footer";
+import { CoverHeader } from "./CoverHeader/CoverHeader";
+import { CoverFooter } from "./CoverFooter/CoverFooter";
+import cn from "classnames";
+import React, { FunctionComponent } from "react";
+
+const Layout = ({children}:LayoutProps): JSX.Element => {
+    return (
+        <div className={styles.wrapper}>
+            <Header className={styles.header}/>
+            <div className={styles.body}>
+                {children}
+            </div>
+            <Footer className={styles.footer}/>
+        </div>
+    );
+};
+
+const CoverLayout = ({children}:LayoutProps): JSX.Element => {
+    return (
+        <div className={styles.coverWrapper}>
+            <video src="../static/vid/bg.mp4" autoPlay loop muted></video>
+            <CoverHeader className={styles.header}/>
+            <div className={styles.coverBody}>
+                {children}
+            </div>
+            <CoverFooter className={styles.footer}/>
+        </div>
+    );
+}
+
+export const withLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {
+    return function withLayoutComponent(props: T): JSX.Element {
+        return (
+            <Layout>
+                <Component {...props}/>
+            </Layout>
+        )
+    }
+}
+
+export const withCoverLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {
+    return function withLayoutComponent(props: T): JSX.Element {
+        return (
+            <CoverLayout>
+                <Component {...props}/>
+            </CoverLayout>
+        )
+    }
+}

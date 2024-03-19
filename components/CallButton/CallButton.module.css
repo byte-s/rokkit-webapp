@@ -1,0 +1,33 @@
+.callbutton{
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s;
+    box-sizing: content-box;
+    font-weight: 400;
+    border: none;
+}
+.black{
+    color: var(--black);
+    font-size: 20px;
+}
+.white{
+    color: var(--white);
+    font-size: 28px;
+}
+.callbutton svg{
+    display: inline;
+    margin-left: 15px;
+    vertical-align: middle;
+    transition: all 0.3s;
+}
+.callbutton:hover svg{
+    transform: translate(60%);
+}
+@media (max-width: 765px){
+    .white{
+        margin-bottom: 75px;
+        font-size: 20px;
+    }
+}

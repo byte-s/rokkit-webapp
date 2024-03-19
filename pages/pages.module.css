@@ -1,0 +1,219 @@
+
+.directionswrapper{
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template: "." / 1fr 1fr 1fr;
+    grid-auto-flow: row;
+    align-items: stretch;
+    justify-items: stretch;
+    grid-column-gap: 3vw;
+    grid-row-gap: 35px;
+    justify-content: space-between;
+}
+.block{
+    margin: 45px 0;
+}
+.block ul{
+    padding-left: 17px;
+}
+.headBlock{
+    margin-top: 0;
+    margin-bottom: 45px;
+}
+.buttonWrapper{
+    display: flex;
+    flex-direction: row;
+}
+.button{
+    margin-right: 10px;
+}
+.contacts{
+    display: flex;
+    flex-direction: column;
+    
+}
+.contacts a{
+    font-size: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+.contacts a:hover{
+    color: var(--grey);
+}
+.margin{
+    margin: 20px 0;
+}
+.projectsWrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.blockWrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+}
+.valuesCard h3{
+    font-size: 16px;
+    font-weight: 500;
+}
+.valuesCard p{
+    font-size: 15px;
+    font-weight: 400;
+}
+.subtitle{
+    font-weight: 500;
+}
+.blockCover{
+    background-color: #1D1D1D;
+    border-radius: 10px;
+    padding: 35px 35px;
+    color: var(--white);
+}
+.blockCover h2{
+    margin-top: 0;
+}
+.actionsWrapper{
+    display: grid;
+    grid-template: "." / 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: row;
+    align-items: stretch;
+    justify-items: stretch;
+    grid-column-gap: 3vw;
+    grid-row-gap: 35px;
+    width: 100%;
+}
+.actionsItem{
+    max-width: 290px;
+}
+.actionsItem img{
+    width: 100%;
+}
+.actionsItem h3{
+    font-size: 16px;
+    font-weight: 500;
+}
+.actionsItem p{
+    font-size: 15px; 
+    color: var(--grey);   
+}
+.contactsWrapper{
+    display: grid;
+    grid-template: "." / 1fr auto;
+    grid-row-gap: 35px;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: row;
+    grid-column-gap: 3vw;
+}
+.formWrapper{
+    display: grid;
+    grid-template: "." / 1fr 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: row;
+    grid-row-gap: 35px;
+    grid-column-gap: 3vw;
+}
+.formItem{
+    display: grid;
+    gap: 15px;
+}
+.formItem label{
+    font-size: 16px;
+    font-weight: 500;
+}
+.formItem input{
+    font-size: 15px;
+    padding: 10px;
+    border: 1px solid var(--black);
+    background-color: var(--white-alt);
+    border-radius: 5px;
+}
+.formItem input[type=text]:focus{
+    outline-color: var(--black);
+}
+.formItem textarea{
+    font-family: SuisseIntl, sans-serif;
+    font-size: 15px;
+    padding: 10px;
+    border: 1px solid var(--black);
+    background-color: var(--white-alt);
+    border-radius: 5px;
+}
+.formItem textarea:focus{
+    outline-color: var(--black);
+}
+.checkWrapper{
+    display: grid;
+}
+.check{
+    margin-bottom: 7px;
+}
+.check input{
+    margin: 0;
+    accent-color: var(--black); 
+    background-color: var(--white-alt);
+}
+.check span{
+    font-weight: 400;
+    margin-left: 5px;
+    font-size: 15px;
+}
+.fullRow{
+    grid-column: 1 / span 2;
+}
+.contacts h2{
+    font-size: 16px;
+    font-weight: 500;
+}
+.contacts a{
+    font-size: 15px;
+    color: var(--grey);
+}
+.contacts p{
+    font-size: 15px;
+    color: var(--grey);
+    margin: 0;
+    margin-bottom: 20px;
+}
+@media (max-width: 765px){
+    .projectsWrapper{
+        justify-content: center;
+    }
+    .blockWrapper{
+        grid-template-columns: 1fr;
+    }
+    .directionswrapper{
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        grid-template: "." / 1fr;
+    }
+    .actionsWrapper{
+        grid-column-gap: 20px;
+        grid-row-gap: 20px;
+        margin-bottom: 0;
+        grid-template: "." / 1fr!important;
+        
+    }
+    .contactsWrapper{
+        grid-template: "." / 1fr;
+    }
+    .formWrapper{
+        grid-template: "." / 1fr;
+        grid-row-gap: 20px;
+        grid-column-gap: 20px;
+    }
+    .fullRow{
+        grid-column: 1;
+    }
+}
+@media (max-width: 991px){
+    .actionsWrapper{
+        grid-column-gap: 30px;
+        grid-row-gap: 30px;
+        grid-template: "." / 1fr 1fr;  
+    }
+    .actionsItem{
+        max-width: 100%;
+    }
+}

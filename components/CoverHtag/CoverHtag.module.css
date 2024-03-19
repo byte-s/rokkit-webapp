@@ -1,0 +1,15 @@
+.h1{
+    font-size: 64px;
+    font-weight: 800;
+    color: var(--white);
+}
+@media (max-width: 1025px){
+    .h1{
+        font-size: 48px;
+    }
+}
+@media (max-width: 765px){
+    .h1{
+        font-size: 36px;
+    }
+}

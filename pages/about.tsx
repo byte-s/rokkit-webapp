@@ -11,6 +11,7 @@ function About(): JSX.Element {
   return (
     <>
     <Head>
+      <link rel="icon" href="../public/favicon.ico" sizes="any" />
       <title>О нас - Rokkit</title>
     </Head>
       <div className={cn(styles.heading, styles.headBlock)}>

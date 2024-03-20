@@ -30,9 +30,12 @@
 .contacts{
     display: flex;
     flex-direction: column;
-    
+    max-width: 360px;
 }
-.contacts h3{
+.contacts span{
+    font-size: 15px;
+}
+.contacts h2{
     margin-top: 0;
 }
 .contacts a{
@@ -41,7 +44,7 @@
     transition: all 0.3s;
 }
 .contacts a:hover{
-    color: var(--grey);
+    color: var(--black);
 }
 .margin{
     margin: 20px 0;
@@ -109,6 +112,7 @@
     grid-auto-columns: 1fr;
     grid-auto-flow: row;
     grid-column-gap: 3vw;
+    align-items: start;
 }
 .formWrapper{
     display: grid;
@@ -182,6 +186,17 @@
     color: var(--grey);
     margin: 0;
     margin-bottom: 20px;
+}
+.privacyWrapper{
+    display: grid;
+    grid-template: "." / 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: row;
+    grid-column-gap: 3vw;
+    align-items: start;
+}
+.privacyWrapper p{
+    margin-top: 0;
 }
 @media (max-width: 765px){
     .projectsWrapper{

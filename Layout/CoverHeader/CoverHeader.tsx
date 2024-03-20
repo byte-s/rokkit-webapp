@@ -31,7 +31,7 @@ export const CoverHeader = ({className, ...props}:CoverHeaderProps): JSX.Element
                         
                     </li>
                     <li>
-                        <Button appearance={"white"}>Свяжитесь со мной</Button>
+                        <Button appearance={"white"}>Наши контакты</Button>
                     </li>
                     <li>
                         <div className={styles.lang}>

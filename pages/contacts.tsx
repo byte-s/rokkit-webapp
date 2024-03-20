@@ -16,7 +16,8 @@ function Contacts(): JSX.Element {
   return (
     <>
       <Head>
-        <title>Наши проекты - Rokkit</title>
+        <link rel="icon" href="../public/favicon.ico" sizes="any" />
+        <title>Контакты - Rokkit</title>
       </Head>
       <div className={cn(styles.heading, styles.headBlock)}>
         <Htag tag='h1'>Контакты</Htag>
@@ -101,15 +102,28 @@ function Contacts(): JSX.Element {
               <a href="mailto:rokkitstudio@gmail.com">rokkitstudio@gmail.com</a>
               <h2>Наши соц. сети</h2>
               <a href="http://">VK</a>
-              <a href="http://">Instagram</a>
               <a href="http://">Telegram</a>
               <h2>Наши контакты</h2>
               <p>Российская Федерация, Омская область, <br /> г. Омск, ул. Фурманова, 7В</p>
               <p>+79994589255</p>
               <h2>Реквизиты</h2>
               <p>ООО «РОККИТ»</p>
-              <p>5503274800 / 550301001</p>
+              <span>Юридический адрес</span>
+              <p>644031, РОССИЯ, ОМСКАЯ ОБЛАСТЬ, Г.О. ГОРОД ОМСК, Г ОМСК, УЛ ЧЕРНОМОРСКАЯ, Д. 6</p>
+              <span>ИНН/КПП</span>
+              <p>5503274800/550301001</p>
+              <span>ОГРН/ОГРНИП</span>
               <p>1245500003650</p>
+              <span>Расчетный счет</span>
+              <p>40702810010001582089</p>
+              <span>Банк</span>
+              <p>АО "ТИНЬКОФФ БАНК"</p>
+              <span>ИНН банка</span>
+              <p>7710140679</p>
+              <span>БИК банка</span>
+              <p>044525974</p>
+              <span>Корреспондентский счет банка</span>
+              <p>30101810145250000974</p>
             </div>
         </div>
     </>

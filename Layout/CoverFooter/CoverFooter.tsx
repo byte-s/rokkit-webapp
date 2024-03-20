@@ -7,7 +7,7 @@ import Link from "next/link";
 export const CoverFooter = ({className, ...props}:CoverFooterProps): JSX.Element => {
     return <footer {...props} className={cn(className, styles.footer)}>
             <div className={styles.copyright}>
-                © Copyright {format(new Date(), 'yyyy')}. All rights reserved
+                © {format(new Date(), 'yyyy')} Rokkit. <Link href={'/privacy'}> Политика конфиденциальности</Link>
             </div>
             <div className={styles.social}>
                 <a href="">

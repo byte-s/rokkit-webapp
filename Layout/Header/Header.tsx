@@ -30,7 +30,7 @@ export const Header = ({className, ...props}:HeaderProps): JSX.Element => {
                         
                     </li>
                     <li>
-                        <Button appearance={"black"}>Свяжитесь со мной</Button>
+                        <Button appearance={"black"}>Наши контакты</Button>
                     </li>
                     <li>
                         <div className={styles.lang}>

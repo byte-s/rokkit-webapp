@@ -198,6 +198,23 @@
 .privacyWrapper p{
     margin-top: 0;
 }
+.privacyWrapper h2{
+    margin-top: 18px;
+}
+.privacyWrapper h3{
+    margin-top: 0;
+    font-size: 16px;
+}
+.sendNote{
+    margin-top: 10px;
+    font-size: 15px;
+}
+.sendNote a{
+    text-decoration: underline;
+}
+.sendNote a:hover{
+    color: var(--grey);
+}
 @media (max-width: 765px){
     .projectsWrapper{
         justify-content: center;

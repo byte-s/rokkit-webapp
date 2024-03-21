@@ -21,6 +21,9 @@
 .copyright{
     font-weight: 400;
 }
+.copyright a:hover{
+    color: var(--grey);
+}
 .mail:hover{
     color: var(--grey);
 }

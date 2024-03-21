@@ -26,6 +26,12 @@
 .mail:hover{
     color: var(--grey);
 }
+.copyright{
+    font-weight: 400;
+}
+.copyright a:hover{
+    color: var(--grey);
+}
 .social svg:hover path{
     transition: all 0.3s;
     fill: var(--grey);

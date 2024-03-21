@@ -9,6 +9,7 @@ import { CallBackBlock } from '../components/CallBackBlock/CallBackBlock';
 import cn from 'classnames'
 import styles from './pages.module.css'
 import React from 'react';
+import Link from 'next/link';
 
 
 
@@ -95,6 +96,9 @@ function Contacts(): JSX.Element {
             </div>
             <div className={styles.fullRow}>
               <Button appearance='black'>Свяжитесь со мной</Button>
+              <p className={styles.sendNote}>
+                Нажимая на кнопку, вы соглашаетесь с условиями обработки персональных данных и <Link target='_blank' href={'/privacy'}>политикой конфиденциальности</Link>
+              </p>
             </div>
           </div>
             <div className={styles.contacts}>

@@ -10,6 +10,7 @@ function Home(): JSX.Element {
       <Head>
         <link rel="icon" href="../public/favicon.ico" sizes="any" />
         <title>Rokkit - заказать внедрение CRM, разработку сайтов и интернет-магазинов</title>
+        sex
       </Head>
       <CoverHtag>Улучшаем бизнес с помощью уникального плана роста, тщательного анализа рынка и современной разработки, включая внедрение CRM систем</CoverHtag>
       <CallButton appearance='white' arrow>Свяжитесь с нами</CallButton>

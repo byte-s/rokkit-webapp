@@ -45,15 +45,12 @@
 	background-color: var(--white);
 	content: "";
 	transition: width 0.3s ease-out;
+    border-radius: 10px;
 }
 .hoverfromleft:hover:after, .hoverfromleft:focus:after{
     width: 100%;
 }
 .logo svg:hover path{
-    transition: all 0.3s;
-    fill: var(--grey);
-}
-.lang svg:hover path{
     transition: all 0.3s;
     fill: var(--grey);
 }

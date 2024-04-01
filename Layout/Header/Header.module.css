@@ -26,6 +26,7 @@
     display: inline;
     margin-left: 50px;
     transition: all 0.3s;
+    white-space: nowrap;
 }
 .hoverfromleft{
     position: relative;
@@ -43,15 +44,12 @@
 	background-color: var(--black);
 	content: "";
 	transition: width 0.3s ease-out;
+    border-radius: 10px;
 }
 .hoverfromleft:hover:after, .hoverfromleft:focus:after{
     width: 100%;
 }
 .logo svg:hover path{
-    transition: all 0.3s;
-    fill: var(--grey);
-}
-.lang svg:hover path{
     transition: all 0.3s;
     fill: var(--grey);
 }
@@ -76,17 +74,17 @@
         background-color: rgba(255, 255, 255, 0.957);
         justify-content: center;
         top: 0;
-        left: 0;
         right: 0;
-        bottom: 100%;
+        bottom: 0;
+        left: 100%;
         text-align: center;
         padding: 0;
         z-index: 0;
-        transition: bottom 1s;
+        transition: left 1s;
         margin: 0;
     }
     .active{
-        bottom: 0;
+        left: 0;
     }
     .nav li{
         margin-bottom: 20px;

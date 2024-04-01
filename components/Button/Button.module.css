@@ -8,6 +8,9 @@
     text-align: center;
     transition: all 0.3s;
     border-radius: 7px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .white{
     border: 1px solid var(--white);
@@ -26,4 +29,9 @@
 .black:hover{
     color: var(--grey);
     border: 1px solid var(--grey);
+}
+@media (max-width: 1025px){
+    .button{
+        max-height: 45px;
+    }
 }

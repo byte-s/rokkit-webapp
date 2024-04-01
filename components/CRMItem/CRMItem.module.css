@@ -1,0 +1,30 @@
+.itemWrapper{
+    display: grid;
+    grid-template-columns: minmax(50px, 210px) minmax(50px, 245px) minmax(120px, 375px) minmax(50px, 210px) minmax(50px, 210px) auto ;
+    gap: 40px;
+    color: var(--white);
+    border-bottom: 1px solid #B8B8B8;
+    padding: 18px 35px;
+    align-items: center;
+    font-weight: 400;
+    font-size: 16px;
+}
+.name{
+    color: #CECECE;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    gap:10px
+}
+.column div{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@media (max-width: 765px){
+    .itemWrapper{
+        font-size: 14px;
+        gap: 20px;
+        padding: 10px 20px;
+    }
+}

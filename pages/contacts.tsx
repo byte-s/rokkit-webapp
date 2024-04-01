@@ -8,12 +8,93 @@ import { CoverHtag } from '../components/CoverHtag/CoverHtag';
 import { CallBackBlock } from '../components/CallBackBlock/CallBackBlock';
 import cn from 'classnames'
 import styles from './pages.module.css'
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { useNavigate } from 'react-router';
+import { addLead } from '../interfaces/controller';
 
+export interface FormProps {
+  result: boolean;
+  isChecked: boolean;
+  callTime: any;
+}
+const serviceList = [
+  { service: "Разработка сайта" },
+  { service: "Внедрение CRM" },
+  { service: "Разработка дизайна" },
+  { service: "Прочее" }
+];
 
+const budgetList = [
+  { budget: "Меньше 100 000 руб." },
+  { budget: "200 000 - 299 000 руб." },
+  { budget: "300 000 - 399 000 руб." },
+  { budget: "400 000 - 499 000 руб." },
+  { budget: "Больше 500 000 руб." }
+];
 
 function Contacts(): JSX.Element {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [company, setCompany] = useState("");
+  const [email, setEmail] = useState("");
+  const [details, setDetails] = useState("");
+
+  ///const navigate = useNavigate();
+
+  const [callServices, setCallServices] = useState(
+    serviceList.map((service) => ({ ...service, isChecked: false }))
+  );
+  
+  const [callBudget, setCallBudget] = useState(
+    budgetList.map((budget) => ({ ...budget, isChecked: false }))
+  );
+
+  const onChangeCheckBox = (e: {
+    target: { checked: boolean; value: React.SetStateAction<string> };
+  }) => {
+    const { value, checked: isChecked } = e.target;
+    setCallServices((prev) =>
+      prev.map((ct) => {
+        if (ct.service === value) ct.isChecked = isChecked;
+        return ct;
+      })
+    );
+    console.log("radio", e.target.value);
+    if (isChecked){
+      
+    }
+  };
+
+  const onChangeRadio = (e: {
+    target: { checked: boolean; value: React.SetStateAction<string> };
+  }) => {
+    const { value, checked: isChecked } = e.target;
+    setCallBudget((prev) =>
+      prev.map((ct) => {
+        if (ct.budget === value) ct.isChecked = isChecked;
+        return ct;
+      })
+    );
+    console.log("radio", e.target.value);
+    if (isChecked){
+      
+    }
+  };
+
+  const addNewLead = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    addLead({
+      name,
+      phone,
+      company,
+      email,
+      details,
+      callServices,
+      callBudget
+    })
+    console.log("Заявка отправлена");
+  }
   return (
     <>
       <Head>
@@ -27,80 +108,56 @@ function Contacts(): JSX.Element {
         </p>
       </div>
       <div className={styles.contactsWrapper}>
-          <div className={styles.formWrapper}>
+          <form onSubmit={(e)=> addNewLead(e)} className={styles.formWrapper}>
             <div className={styles.formItem}>
               <label htmlFor="name">Имя</label>
-              <input placeholder='Ваше имя' id='name' name="name" type="text" />
+              <input placeholder='Ваше имя' name='name' type="text" required value={name} onChange={(e)=>setName(e.target.value)}/>
             </div>
             <div className={styles.formItem}>
               <label htmlFor="tel">Телефон</label>
-              <input placeholder='Ваш телефон' id='tel' name="tel" type="text" />
+              <input placeholder='Ваш телефон' name='tel' type="text" required value={phone} onChange={(e)=>setPhone(e.target.value)}/>
             </div>
             <div className={styles.formItem}>
               <label htmlFor="">Организация</label>
-              <input placeholder='Ваша организация' id='company' name="company" type="text" />
+              <input placeholder='Ваша организация' name="company" type="text" required value={company} onChange={(e)=>setCompany(e.target.value)}/>
             </div>
             <div className={styles.formItem}>
               <label htmlFor="">Почта</label>
-              <input placeholder='Ваша почта' id='mail' name="mail" type="text" />
+              <input placeholder='Ваша почта' name="mail" type="text" required value={email} onChange={(e)=>setEmail(e.target.value)}/>
             </div>
             <div className={styles.formItem}>
               <label htmlFor="">Какую услугу хотели бы получить?</label>
               <div className={styles.checkWrapper}>
-                <label className={styles.check} htmlFor="">
-                  <input type="checkbox" />
-                  <span>Разработку сайта</span>
-                </label>
-                <label className={styles.check} htmlFor="">
-                  <input type="checkbox" />
-                  <span>Внедрение CRM</span>
-                </label>
-                <label className={styles.check} htmlFor="">
-                  <input type="checkbox" />
-                  <span>Разработку дизайна</span>
-                </label>
-                <label className={styles.check} htmlFor="">
-                  <input type="checkbox" />
-                  <span>Прочее...</span>
-                </label>
+                {callServices.map((item, index) => (
+                    <label htmlFor={item.service} className={styles.check}>
+                      <input name='service' type="checkbox" value={item.service} onChange={onChangeCheckBox} checked={item.isChecked}/>
+                      <span>{item.service}</span>
+                    </label>
+                ))}
               </div>
             </div>
             <div className={styles.formItem}>
               <label htmlFor="">Планируемый бюджет</label>
               <div className={styles.checkWrapper}>
-                <label className={styles.check} htmlFor="">
-                  <input type="radio" id="bot" name="drone" value="bot"/>
-                  <span>Меньше 100 000 руб.</span>
-                </label>
-                <label className={styles.check} htmlFor="">
-                  <input type="radio" id="top" name="drone" value="top"/>
-                  <span>200 000 - 299 000 руб.</span>
-                </label>
-                <label className={styles.check} htmlFor="">
-                  <input type="radio" id="low" name="drone" value="low"/>
-                  <span>300 000 - 399 000 руб.</span>
-                </label>
-                <label className={styles.check} htmlFor="">
-                  <input type="radio" id="sex" name="drone" value="sex"/>
-                  <span>400 000 - 499 000 руб.</span>
-                </label>
-                <label className={styles.check} htmlFor="">
-                  <input type="radio" id="sex" name="drone" value="sex"/>
-                  <span>Больше 500 000 руб.</span>
-                </label>
+                {callBudget.map((item, index) => (
+                    <label className={styles.check} htmlFor={item.budget}>
+                      <input type="radio" id="bot" name="budget" value={item.budget} onChange={onChangeRadio} checked={item.isChecked}/>
+                      <span>{item.budget}</span>
+                    </label>
+                ))}
               </div>
             </div>
             <div className={cn(styles.formItem,styles.fullRow)}>
-              <label htmlFor="">Имя</label>
-              <textarea placeholder='Расскажите подробнее о вашем проекте' name="" id="" maxLength={5000}></textarea>
+              <label htmlFor="">Детали проекта</label>
+              <textarea placeholder='Расскажите подробнее о вашем проекте' name="details" maxLength={5000} required value={details} onChange={(e)=>setDetails(e.target.value)}></textarea>
             </div>
             <div className={styles.fullRow}>
-              <Button appearance='black'>Свяжитесь со мной</Button>
+              <input className={styles.submit} type="submit" />
               <p className={styles.sendNote}>
                 Нажимая на кнопку, вы соглашаетесь с условиями обработки персональных данных и <Link target='_blank' href={'/privacy'}>политикой конфиденциальности</Link>
               </p>
             </div>
-          </div>
+          </form>
             <div className={styles.contacts}>
               <h2>Наша почта</h2>
               <a href="mailto:rokkitstudio@gmail.com">rokkitstudio@gmail.com</a>

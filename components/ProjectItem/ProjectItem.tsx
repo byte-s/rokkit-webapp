@@ -1,12 +1,13 @@
 import { ProjectItemProps } from "./ProjectItem.props";
 import styles from "./ProjectItem.module.css"
+import React, { useEffect, useState } from "react";
+import Link from "next/dist/client/link";
 
-export const ProjectItem = ({children}:ProjectItemProps): JSX.Element => {
-    return <div className={styles.item}>
-                <img src="../static/img/bg.png" alt="" className={styles.thumb}/>
+export const ProjectItem = ({project}:ProjectItemProps): JSX.Element => {
+    return <Link href={`projects/${project.id}`} className={styles.item}>
+                <img src="../static/img/action-1.webp" alt="" className={styles.thumb}/>
                 <div className={styles.textWrapper}>
-                    <h3 className={styles.heading}>Внедрение Б24 в отдел продаж строительной компании “Север”</h3>
-                    <p>{children}</p>
+                    <h3 className={styles.heading}>{project.header}</h3>
                 </div>
                 <div className={styles.byWrapper}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="63" height="13" viewBox="0 0 63 13" fill="none">
@@ -23,6 +24,6 @@ export const ProjectItem = ({children}:ProjectItemProps): JSX.Element => {
                         </defs>
                     </svg>
                 </div>
-            </div>
+            </Link>
 };
 

@@ -7,6 +7,8 @@ import { CoverFooter } from "./CoverFooter/CoverFooter";
 import cn from "classnames";
 import React, { FunctionComponent } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { AdminHeader } from "./AdminHeader/AdminHeader";
+import { AdminFooter } from "./AdminFooter/AdminFooter";
 
 const Layout = ({children}:LayoutProps): JSX.Element => {
     return (
@@ -35,6 +37,18 @@ const CoverLayout = ({children}:LayoutProps): JSX.Element => {
     );
 }
 
+const AdminLayout = ({children}:LayoutProps): JSX.Element => {
+    return (
+        <div className={styles.adminWrapper}>
+            <AdminHeader className={styles.header}/>
+            <div className={styles.adminBody}>
+                {children}
+            </div>
+            <AdminFooter className={styles.footer}/>
+        </div>
+    )
+}
+
 export const withLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {
     return function withLayoutComponent(props: T): JSX.Element {
         return (
@@ -51,6 +65,16 @@ export const withCoverLayout = <T extends Record<string, unknown>>(Component: Fu
             <CoverLayout>
                 <Component {...props}/>
             </CoverLayout>
+        )
+    }
+}
+
+export const withAdminLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {
+    return function withLayoutComponent(props: T): JSX.Element {
+        return (
+            <AdminLayout>
+                <Component {...props}/>
+            </AdminLayout>
         )
     }
 }

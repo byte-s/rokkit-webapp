@@ -10,6 +10,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { AdminHeader } from "./AdminHeader/AdminHeader";
 import { AdminFooter } from "./AdminFooter/AdminFooter";
 
+
 const Layout = ({children}:LayoutProps): JSX.Element => {
     return (
         <div className={styles.wrapper}>
@@ -70,10 +71,11 @@ export const withCoverLayout = <T extends Record<string, unknown>>(Component: Fu
 }
 
 export const withAdminLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {
-    return function withLayoutComponent(props: T): JSX.Element {
+    return function withLayoutComponent(props: T) {
         return (
             <AdminLayout>
                 <Component {...props}/>
+             
             </AdminLayout>
         )
     }

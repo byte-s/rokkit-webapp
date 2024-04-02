@@ -234,6 +234,14 @@
     color: var(--grey);
     border: 1px solid var(--grey);
 }
+.formSended{
+    display: flex;
+    flex-direction: column;
+}
+.formSended h2{
+    font-size: 18px;
+    font-weight: 600;
+}
 @media (max-width: 765px){
     .projectsWrapper{
         justify-content: center;

@@ -157,7 +157,7 @@ function Contacts(): JSX.Element {
                 <label htmlFor="">Планируемый бюджет</label>
                 <div className={styles.checkWrapper}>
                   {callBudget.map((item, index) => (
-                      <label className={styles.check} htmlFor={item.budget}>
+                      <label className={styles.check} key={index} htmlFor={item.budget}>
                         <input type="radio" id="bot" name="budget" value={item.budget} onChange={onChangeRadio} checked={item.isChecked}/>
                         <span>{item.budget}</span>
                       </label>

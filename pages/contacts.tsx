@@ -34,18 +34,15 @@ const budgetList = [
 ];
 
 function Contacts(): JSX.Element {
-  let form;
   const [sendStatus, setSendStatus] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [details, setDetails] = useState("");
-
   const [callServices, setCallServices] = useState(
     serviceList.map((service) => ({ ...service, isChecked: false }))
   );
-  
   const [callBudget, setCallBudget] = useState(
     budgetList.map((budget) => ({ ...budget, isChecked: false }))
   );
@@ -91,17 +88,13 @@ function Contacts(): JSX.Element {
       email,
       details,
       callServices,
-      callBudget
+      callBudget,
+      services: '',
+      budget: ''
     });
     setSendStatus(true);
-    form = <>babe</>;
     console.log("Заявка отправлена");
   };
-  if (sendStatus) {
-    form = <>es</>;
-  } else {
-    form = <>sex</>;
-  }
   return (
     <>
       <Head>

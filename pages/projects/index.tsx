@@ -1,20 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { withLayout } from '../../Layout/Layout.tsx'
-import { Htag } from '../../components/Htag/Htag.tsx';
-import { Button } from '../../components/Button/Button.tsx';
-import { CallButton } from '../../components/CallButton/CallButton.tsx';
-import { CoverHtag } from '../../components/CoverHtag/CoverHtag.tsx';
-import { CallBackBlock } from '../../components/CallBackBlock/CallBackBlock.tsx';
+import { withLayout } from '../../Layout/Layout'
+import { Htag } from '../../components/Htag/Htag';
+import { Button } from '../../components/Button/Button';
+import { CallButton } from '../../components/CallButton/CallButton';
+import { CoverHtag } from '../../components/CoverHtag/CoverHtag';
+import { CallBackBlock } from '../../components/CallBackBlock/CallBackBlock';
 import styles from '../pages.module.css'
 import cn from 'classnames'
-import { ProjectItem } from '../../components/ProjectItem/ProjectItem.tsx';
-import { ComingSoonBlock } from '../../components/ComingSoonBlock/ComingSoonBlock.tsx';
+import { ProjectItem } from '../../components/ProjectItem/ProjectItem';
+import { ComingSoonBlock } from '../../components/ComingSoonBlock/ComingSoonBlock';
 import React, {useEffect, useState} from 'react';
-import {db} from '../../interfaces/firebase.config.js'
 import { getDocs, collection, DocumentData, onSnapshot, QuerySnapshot } from '@firebase/firestore';
-import { NewProjectType } from '../../types/project.ts';
-import { projectsCollection } from '../../interfaces/controller.ts';
+import { NewProjectType } from '../../types/project';
+import { projectsCollection } from '../../interfaces/controller';
 
 
     

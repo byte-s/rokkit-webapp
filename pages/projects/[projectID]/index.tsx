@@ -1,19 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { withLayout } from '../../../Layout/Layout.tsx'
+import { withLayout } from '../../../Layout/Layout'
 import styles from '../../pages.module.css'
 import cn from 'classnames'
 import React, {useEffect, useState} from 'react';
 import {db} from '../../../interfaces/firebase.config.js'
 import { getDocs, collection, DocumentData, onSnapshot, QuerySnapshot, doc, getDoc } from '@firebase/firestore';
-import { NewProjectType } from '../../../types/project.ts';
-import { firestore, projectsCollection } from '../../../interfaces/controller.ts';
+import { NewProjectType } from '../../../types/project';
+import { firestore, projectsCollection } from '../../../interfaces/controller';
 import { useParams } from 'react-router-dom';
-import { Htag } from '../../../components/Htag/Htag.tsx'
+import { Htag } from '../../../components/Htag/Htag'
 import { useRouter } from 'next/router'
-import { ProjectItem } from '../../../components/ProjectItem/ProjectItem.tsx'
-import { ProjectDetailed } from '../../../components/ProjectDetailed/ProjectDetailed.tsx'
-import { CallBackBlock } from '../../../components/CallBackBlock/CallBackBlock.tsx'
+import { ProjectItem } from '../../../components/ProjectItem/ProjectItem'
+import { ProjectDetailed } from '../../../components/ProjectDetailed/ProjectDetailed'
+import { CallBackBlock } from '../../../components/CallBackBlock/CallBackBlock'
 
     
 function Projects(): JSX.Element {

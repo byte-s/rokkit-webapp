@@ -146,7 +146,7 @@ function Contacts(): JSX.Element {
                 <label htmlFor="">Какую услугу хотели бы получить?</label>
                 <div className={styles.checkWrapper}>
                   {callServices.map((item, index) => (
-                      <label htmlFor={item.service} className={styles.check}>
+                      <label htmlFor={item.service} key={index} className={styles.check}>
                         <input name='service' type="checkbox" value={item.service} onChange={onChangeCheckBox} checked={item.isChecked}/>
                         <span>{item.service}</span>
                       </label>

@@ -11,7 +11,7 @@ import cn from 'classnames'
 import { ProjectItem } from '../../components/ProjectItem/ProjectItem.tsx';
 import { ComingSoonBlock } from '../../components/ComingSoonBlock/ComingSoonBlock.tsx';
 import React, {useEffect, useState} from 'react';
-import {db} from '../../interfaces/firebase.config.ts'
+import {db} from '../../interfaces/firebase.config.js'
 import { getDocs, collection, DocumentData, onSnapshot, QuerySnapshot } from '@firebase/firestore';
 import { NewProjectType } from '../../types/project.ts';
 import { projectsCollection } from '../../interfaces/controller.ts';

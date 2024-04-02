@@ -4,7 +4,7 @@ import { withLayout } from '../../../Layout/Layout.tsx'
 import styles from '../../pages.module.css'
 import cn from 'classnames'
 import React, {useEffect, useState} from 'react';
-import {db} from '../../../interfaces/firebase.config.ts'
+import {db} from '../../../interfaces/firebase.config.js'
 import { getDocs, collection, DocumentData, onSnapshot, QuerySnapshot, doc, getDoc } from '@firebase/firestore';
 import { NewProjectType } from '../../../types/project.ts';
 import { firestore, projectsCollection } from '../../../interfaces/controller.ts';

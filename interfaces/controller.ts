@@ -1,5 +1,5 @@
 import {addDoc, collection, getFirestore } from 'firebase/firestore';
-import {app} from './firebase.config.ts'
+import {app} from './firebase.config.js'
 import { AddLeadType } from '../types/lead.js';
 
 export const firestore = getFirestore(app);

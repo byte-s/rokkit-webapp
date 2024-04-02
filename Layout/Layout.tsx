@@ -4,7 +4,6 @@ import { Header } from "./Header/Header";
 import { Footer } from "./Footer/Footer";
 import { CoverHeader } from "./CoverHeader/CoverHeader";
 import { CoverFooter } from "./CoverFooter/CoverFooter";
-import cn from "classnames";
 import React, { FunctionComponent } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { AdminHeader } from "./AdminHeader/AdminHeader";
@@ -28,7 +27,7 @@ const CoverLayout = ({children}:LayoutProps): JSX.Element => {
     return (
         <div className={styles.coverWrapper}>
             <SpeedInsights/>
-            <video src="../static/vid/bg.mp4" autoPlay playsInline preload="metadata" loop muted></video>
+            <video src={"../static/vid/bg.mp4"} autoPlay playsInline preload="metadata" loop muted></video>
             <CoverHeader className={styles.header}/>
             <div className={styles.coverBody}>
                 {children}

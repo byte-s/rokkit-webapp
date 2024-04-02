@@ -75,7 +75,6 @@ export const withAdminLayout = <T extends Record<string, unknown>>(Component: Fu
         return (
             <AdminLayout>
                 <Component {...props}/>
-             
             </AdminLayout>
         )
     }

@@ -12,6 +12,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useNavigate } from 'react-router';
 import { addLead } from '../interfaces/controller';
+import { ym } from 'next-yandex-metrica';
 
 export interface FormProps {
   result: boolean;
@@ -162,7 +163,7 @@ function Contacts(): JSX.Element {
                 <textarea placeholder='Расскажите подробнее о вашем проекте' name="details" maxLength={5000} required value={details} onChange={(e)=>setDetails(e.target.value)}></textarea>
               </div>
               <div className={styles.fullRow}>
-                <input className={styles.submit} type="submit" />
+                <input className={styles.submit} type="submit" onClick={() => ym(96996731, 'reachGoal', 'sendForm')}/>
                 <p className={styles.sendNote}>
                   Нажимая на кнопку, вы соглашаетесь с условиями обработки персональных данных и <Link target='_blank' href={'/privacy'}>политикой конфиденциальности</Link>
                 </p>

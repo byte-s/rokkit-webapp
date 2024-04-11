@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { withLayout } from '../../Layout/Layout'
 import { Htag } from '../../components/Htag/Htag';
 import { Button } from '../../components/Button/Button';
 import { CallButton } from '../../components/CallButton/CallButton';
@@ -12,54 +11,50 @@ import { ProjectItem } from '../../components/ProjectItem/ProjectItem';
 import { ComingSoonBlock } from '../../components/ComingSoonBlock/ComingSoonBlock';
 import React, {useEffect, useState} from 'react';
 import { getDocs, collection, DocumentData, onSnapshot, QuerySnapshot } from '@firebase/firestore';
-import { NewProjectType } from '../../types/project';
 import { projectsCollection } from '../../interfaces/controller';
+import { PrismaClient, Projects, Prisma } from '@prisma/client';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Header } from '../../Layout/Header/Header';
+import { Footer } from '../../Layout/Footer/Footer';
+import layout from '../../Layout/Layout.module.css'
 
+const prisma = new PrismaClient();
+
+export async function getServerSideProps() {
+  const project: Projects[] = await prisma.projects.findMany();
+  return {
+    props: {
+      initialProjects: project
+    }
+  };
+}
 
     
-function Projects(): JSX.Element {
-  const [projects, setProjects] = useState<NewProjectType[]>([]);
-    
-    useEffect(() => onSnapshot(projectsCollection, (snapshot:QuerySnapshot<DocumentData>) => {
-        setProjects(
-            snapshot.docs.map((doc) => {
-                return {
-                    id: doc.id,
-                    ...doc.data()
-                }
-            })
-        )
-        })
-    );
-  console.log(projects, "projects")
+export default function Projects({initialProjects}): JSX.Element {
+  const [project, setProject] = useState<Projects[]>(initialProjects);
   return (
-    <>
-      <Head>
+    <div className={layout.wrapper}>
+       <Head>
         <link rel="icon" href="../public/favicon.ico" sizes="any" />
         <title>Наши проекты - Rokkit</title>
       </Head>
-      {/* <div className={cn(styles.heading, styles.headBlock)}>
-        <Htag tag='h1'>Наши проекты</Htag>
-        <p>
-          We support Web 3.0 teams and open-source projects through funding, advocacy, research and collaborations.
-        </p>
-      </div> */}
-      <ComingSoonBlock></ComingSoonBlock>
-          {/* {projects && projects.length ? (
-              <div className={styles.projectsWrapper}>
-                {projects?.map((project) => (
-                  <ProjectItem key={project.id} project={project}/>
-                ))}
-              </div>
-            )
-            :
-            (
-              <ComingSoonBlock></ComingSoonBlock>
-            )
-          } */}
-      {/* <CallBackBlock></CallBackBlock> */}
-    </>
+      <SpeedInsights/>
+      <Header className={layout.header}/>
+      <div className={layout.body}>
+        <ComingSoonBlock></ComingSoonBlock>
+        {/* <div className={cn(styles.heading, styles.headBlock)}>
+          <Htag tag='h1'>Наши проекты</Htag>
+          <p>
+            We support Web 3.0 teams and open-source projects through funding, advocacy, research and collaborations.
+          </p>
+        </div>
+        <div className={styles.projectsWrapper}>
+          {project.map((c, i: number) => (
+            <ProjectItem key={i} project={c}/>
+          ))}
+        </div> */}
+      </div>
+      <Footer className={layout.footer}/>
+    </div>
   );
 }
-
-export default withLayout(Projects);

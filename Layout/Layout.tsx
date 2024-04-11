@@ -8,11 +8,13 @@ import React, { FunctionComponent } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { AdminHeader } from "./AdminHeader/AdminHeader";
 import { AdminFooter } from "./AdminFooter/AdminFooter";
+import { YandexMetrika } from "../components/YandexMetrika/YandexMetrika";
 
 
 const Layout = ({children}:LayoutProps): JSX.Element => {
     return (
         <div className={styles.wrapper}>
+            <YandexMetrika></YandexMetrika>
             <SpeedInsights/>
             <Header className={styles.header}/>
             <div className={styles.body}>
@@ -26,6 +28,7 @@ const Layout = ({children}:LayoutProps): JSX.Element => {
 const CoverLayout = ({children}:LayoutProps): JSX.Element => {
     return (
         <div className={styles.coverWrapper}>
+            <YandexMetrika></YandexMetrika>
             <SpeedInsights/>
             <video src={"../static/vid/bg.mp4"} autoPlay playsInline preload="metadata" loop muted></video>
             <CoverHeader className={styles.header}/>
@@ -59,11 +62,12 @@ export const withLayout = <T extends Record<string, unknown>>(Component: Functio
     }
 }
 
-export const withCoverLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {
-    return function withLayoutComponent(props: T): JSX.Element {
+export const withCoverLayout = (Component: FunctionComponent) => {
+    return function withLayoutComponent(props: Record<string, unknown>,initialProject): JSX.Element {
         return (
             <CoverLayout>
-                <Component {...props}/>
+                <Component {...props}
+                {...initialProject}/>
             </CoverLayout>
         )
     }

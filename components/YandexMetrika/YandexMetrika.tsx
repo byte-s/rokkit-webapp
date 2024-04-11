@@ -11,9 +11,9 @@ export function YandexMetrika() {
 useEffect(() => {
   const pathName = usePathname();
   const searchParams = useSearchParams();
-  useEffect(() => {
-    ym(96996731, "hit", window.location.href);
-  }, [pathName, searchParams]);
+  // useEffect(() => {
+  // ym(96996731, "hit", window.location.href);
+  // }, [pathName, searchParams]);
 }, [pathname, searchParams])
  
   return (

@@ -8,7 +8,6 @@ import React, { FunctionComponent, Suspense } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { AdminHeader } from "./AdminHeader/AdminHeader";
 import { AdminFooter } from "./AdminFooter/AdminFooter";
-import { YandexMetrika } from "../components/YandexMetrika/YandexMetrika";
 import { YandexMetricaProvider } from 'next-yandex-metrica';
 
 

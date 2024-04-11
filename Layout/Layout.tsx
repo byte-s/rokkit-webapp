@@ -14,7 +14,6 @@ import { YandexMetrika } from "../components/YandexMetrika/YandexMetrika";
 const Layout = ({children}:LayoutProps): JSX.Element => {
     return (
         <div className={styles.wrapper}>
-            <YandexMetrika></YandexMetrika>
             <SpeedInsights/>
             <Header className={styles.header}/>
             <div className={styles.body}>
@@ -28,7 +27,6 @@ const Layout = ({children}:LayoutProps): JSX.Element => {
 const CoverLayout = ({children}:LayoutProps): JSX.Element => {
     return (
         <div className={styles.coverWrapper}>
-            <YandexMetrika></YandexMetrika>
             <SpeedInsights/>
             <video src={"../static/vid/bg.mp4"} autoPlay playsInline preload="metadata" loop muted></video>
             <CoverHeader className={styles.header}/>

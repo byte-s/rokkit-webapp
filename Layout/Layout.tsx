@@ -9,20 +9,22 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { AdminHeader } from "./AdminHeader/AdminHeader";
 import { AdminFooter } from "./AdminFooter/AdminFooter";
 import { YandexMetrika } from "../components/YandexMetrika/YandexMetrika";
+import { YandexMetricaProvider } from 'next-yandex-metrica';
 
 
 const Layout = ({children}:LayoutProps): JSX.Element => {
     return (
         <div className={styles.wrapper}>
-            <SpeedInsights/>
-            <Header className={styles.header}/>
-            <div className={styles.body}>
-                {children}
-            <Suspense>
-                <YandexMetrika />
-            </Suspense>
-            </div>
-            <Footer className={styles.footer}/>
+            <YandexMetricaProvider tagID={96996731}
+      initParameters={{ clickmap: true, trackLinks: true, accurateTrackBounce: true }}>
+                <SpeedInsights/>
+                <Header className={styles.header}/>
+                <div className={styles.body}>
+                    {children}
+                </div>
+                <Footer className={styles.footer}/>
+            </YandexMetricaProvider>
+            
         </div>
     );
 };

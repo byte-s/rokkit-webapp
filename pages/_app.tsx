@@ -5,6 +5,7 @@ import React from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import styles from './pages.module.css'
+import { YandexMetricaProvider } from 'next-yandex-metrica';
 
 export const SuisseIntl = localFont({
   src: [

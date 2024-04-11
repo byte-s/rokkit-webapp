@@ -1,16 +1,19 @@
 'use client'
  
-import { useEffect } from 'react'
-import { usePathname, useSearchParams } from 'next/navigation'
-import { Script } from 'next/script'
+import { useEffect } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
+import Script from "next/script";
  
 export function YandexMetrika() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
  
 useEffect(() => {
-  const url = `${pathname}?${searchParams}`
-  ym(96996731, 'hit', window.location.href);
+  const pathName = usePathname();
+  const searchParams = useSearchParams();
+  useEffect(() => {
+    ym(96996731, "hit", window.location.href);
+  }, [pathName, searchParams]);
 }, [pathname, searchParams])
  
   return (

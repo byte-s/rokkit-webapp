@@ -8,9 +8,9 @@ export default function YandexMetrika() {
   const pathName = usePathname()
   const searchParams = useSearchParams()
  
-  useEffect(() => {
-    ym(96996731, "hit", window.location.href);
-  }, [pathName, searchParams]);
+  // useEffect(() => {
+  //   ym(96996731, "hit", window.location.href);
+  // }, [pathName, searchParams]);
  
   return (
     <Script id="metrika-counter" strategy="afterInteractive">

@@ -40,7 +40,7 @@
     -webkit-appearance: none
 }
 
-.coverWrapper video::--webkit-media-controls-play-button {
+.coverWrapper video:state(webkit-media-controls-play-button) {
     display: none !important;
     -webkit-appearance: none
 }

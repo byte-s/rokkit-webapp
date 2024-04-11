@@ -31,13 +31,17 @@ const Layout = ({children}:LayoutProps): JSX.Element => {
 const CoverLayout = ({children}:LayoutProps): JSX.Element => {
     return (
         <div className={styles.coverWrapper}>
-            <SpeedInsights/>
-            <video src={"../static/vid/bg.mp4"} autoPlay playsInline preload="metadata" loop muted></video>
-            <CoverHeader className={styles.header}/>
-            <div className={styles.coverBody}>
-                {children}
-            </div>
-            <CoverFooter className={styles.footer}/>
+            <YandexMetricaProvider tagID={96996731}
+      initParameters={{ clickmap: true, trackLinks: true, accurateTrackBounce: true }}>
+                <SpeedInsights/>
+                <video src={"../static/vid/bg.mp4"} autoPlay playsInline preload="metadata" loop muted></video>
+                <CoverHeader className={styles.header}/>
+                <div className={styles.coverBody}>
+                    {children}
+                </div>
+                <CoverFooter className={styles.footer}/>
+            </YandexMetricaProvider>
+            
         </div>
     );
 }

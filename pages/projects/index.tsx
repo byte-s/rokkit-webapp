@@ -18,16 +18,16 @@ import { Header } from '../../Layout/Header/Header';
 import { Footer } from '../../Layout/Footer/Footer';
 import layout from '../../Layout/Layout.module.css'
 
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
-export async function getServerSideProps() {
-  const project: Projects[] = await prisma.projects.findMany();
-  return {
-    props: {
-      initialProjects: project
-    }
-  };
-}
+// export async function getServerSideProps() {
+//   const project: Projects[] = await prisma.projects.findMany();
+//   return {
+//     props: {
+//       initialProjects: project
+//     }
+//   };
+// }
 
     
 export default function Projects({initialProjects}): JSX.Element {

@@ -4,7 +4,7 @@ import { Header } from "./Header/Header";
 import { Footer } from "./Footer/Footer";
 import { CoverHeader } from "./CoverHeader/CoverHeader";
 import { CoverFooter } from "./CoverFooter/CoverFooter";
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, Suspense } from "react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { AdminHeader } from "./AdminHeader/AdminHeader";
 import { AdminFooter } from "./AdminFooter/AdminFooter";
@@ -18,6 +18,9 @@ const Layout = ({children}:LayoutProps): JSX.Element => {
             <Header className={styles.header}/>
             <div className={styles.body}>
                 {children}
+            <Suspense>
+                <YandexMetrika />
+            </Suspense>
             </div>
             <Footer className={styles.footer}/>
         </div>
